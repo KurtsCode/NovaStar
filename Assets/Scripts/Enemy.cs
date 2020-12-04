@@ -7,6 +7,10 @@ public class Enemy : MonoBehaviour
     public bool exploded = false;
 
     public bool beamHit = false;
+    public float hitTime;
+
+    [SerializeField]
+    public float iFrameTime = 0.3f;
 
     // Start is called before the first frame update
     void Start()
@@ -41,8 +45,24 @@ public class Enemy : MonoBehaviour
         if (beam.tag == "Beam")
         {
             Debug.Log("Hit detected");
-
-            beamHit = true;
         }
+
+        if (beamHit == false)
+        {
+            Debug.Log("Damage Dealt");
+            hitTime = Time.time;
+            beamHit = true;
+
+            StartCoroutine(HitTimer());
+        }
+
     }
+
+
+    IEnumerator HitTimer()
+    {
+        yield return new WaitForSeconds(iFrameTime);
+        beamHit = false;
+    }
+
 }

@@ -12,6 +12,8 @@ public class LaserBeam : MonoBehaviour
 
     private bool _weaponActive = true;
 
+    private bool isEnemyLaser = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -22,9 +24,12 @@ public class LaserBeam : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_weaponActive)
-        {
-            
-        } 
+        
     }
+
+    public void AssignEnemyLaser()
+    {
+        isEnemyLaser = true;
+    }
+
 }
