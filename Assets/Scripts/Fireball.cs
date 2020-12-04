@@ -62,6 +62,7 @@ public class Fireball : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        /*
         if (collision.tag == "Player" && _isEnemyShot == true)
         {
             Player player = collision.GetComponent<Player>();
@@ -70,6 +71,6 @@ public class Fireball : MonoBehaviour
             {
                 player.Damage();
             }
-        }
+        } */
     }
 }
